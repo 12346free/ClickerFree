@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickerFree | 高级宏自动化与极速连点工具 (V0.4)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 基础样式和配色方案 */
+        :root {
+            --primary-color: #1a73e8; /* 核心蓝色 */
+            --secondary-color: #00bfa5; /* 绿色/强调色 */
+            --background-light: #f4f6f9;
+            --background-white: #ffffff;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+        }
+        /* 头部和 Banner */
+        header {
+            background: linear-gradient(135deg, #007bff, #1a73e8);
+            color: var(--background-white);
+            padding: 60px 20px 40px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        /* 容器 */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* 标题 */
+        h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        /* 功能卡片网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background-color: var(--background-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .feature-card i {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 1.4em;
+            color: var(--text-dark);
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        /* 下载按钮样式 */
+        .download-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--background-white);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .download-btn i {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+        .download-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .github-btn {
+            background-color: #24292e; /* GitHub 黑色 */
+            color: var(--background-white);
+        }
+        .cloud-btn {
+            background-color: #f7b731; /* 网盘橙色 */
+            color: var(--text-dark);
+        }
+        /* 代码块 */
+        .code-block {
+            background-color: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #3f51b5;
+        }
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #e0e0e0;
+            color: var(--text-light);
+        }
+        .highlight-key {
+            background-color: #fff3e0;
+            color: #ff9800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ClickerFree：高级宏自动化与极速连点工具</h1>
+        <p>基于 Python/PyQt5 开发 | 跨平台 | **V0.4 稳定版**</p>
+    </header>
+
+    <div class="container">
+
+        <section class="download-section">
+            <h2><i class="fas fa-download"></i> 立即获取 ClickerFree V0.4</h2>
+            <p style="font-size: 1.1em; color: var(--text-light);">推荐下载已打包的 Releases 版本（通常为 .exe 文件），无需配置 Python 环境。</p>
+            
+            <div class="download-buttons">
+                <a href="YOUR_GITHUB_RELEASES_URL" class="download-btn github-btn" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Releases (推荐)
+                </a>
+                
+                <a href="YOUR_CLOUD_DRIVE_URL" class="download-btn cloud-btn" target="_blank">
+                    <i class="fas fa-cloud"></i> 网盘/云盘下载
+                </a>
+            </div>
+            
+            <p style="margin-top: 15px; color: #dc3545;">
+                ⚠️ **重要：** 请务必替换代码中 **`YOUR_GITHUB_RELEASES_URL`** 和 **`YOUR_CLOUD_DRIVE_URL`** 为你的实际链接！
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-magic"></i> 核心功能与技术优势</h2>
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> 极致速度连点</h3>
+                    <p>ClickerFree 采用低级输入模拟库 **pynput**，并结合 **PyQt5 线程** 独立运行核心任务。这保证了：</p>
+                    <ul>
+                        <li>**毫秒级响应：** 最低支持 <span class="highlight-key">0.001s</span> (1 毫秒) 的执行间隔，逼近系统限制，适用于对速度要求极高的场景。</li>
+                        <li>**UI 不卡顿：** 任务在后台线程高效运行，主界面和日志输出保持流畅响应。</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-video"></i> 智能宏脚本录制</h3>
+                    <p>宏录制功能不仅限于简单的点击，而是**完整捕捉**您的操作路径：</p>
+                    <ul>
+                        <li>**全方位记录：** 记录鼠标移动轨迹、左右键点击、拖拽操作，以及键盘上的所有输入和按键。</li>
+                        <li>**时间精准同步：** 精确记录您每次操作之间的真实延迟，实现高保真回放。</li>
+                        <li>**可编辑性：** 录制的宏可导出为 **JSON 文件**，方便您手动修改时间间隔、加速回放，或调整特定操作坐标。</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-keyboard"></i> 强大的全局热键控制</h3>
+                    <p>通过全局监听器，您可以在任何应用程序或游戏窗口中，快速、无干扰地控制 ClickerFree 的状态：</p>
+                    <ul>
+                        <li>**运行/停止:** 随时按下 <span class="highlight-key">F8</span> 键，立即启动或暂停当前设置的任务（连点、输入或宏回放）。</li>
+                        <li>**录制/停止:** 按下 <span class="highlight-key">F10</span> 启动宏录制，再次按下 <span class="highlight-key">F10</span> 即可停止并捕获脚本。</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-font"></i> 键盘输入与循环</h3>
+                    <p>专为需要重复输入文本的场景设计，提供灵活的输入循环控制：</p>
+                    <ul>
+                        <li>**自定义文本：** 循环输入您设定的任何文字或字符串。</li>
+                        <li>**高级选项：** 可选择在每次输入结束后自动添加**空格**或**回车（Enter）**键，简化表单填写或聊天操作。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-code"></i> 源码运行与环境配置</h2>
+            <p>作为开源项目，欢迎开发者从源码运行或贡献代码。您需要安装以下依赖：</p>
+            
+            <h3>安装必需的 Python 依赖</h3>
+            <div class="code-block">
+                <code>pip install PyQt5 pynput mouse keyboard</code>
+            </div>
+
+            <h3>运行程序</h3>
+            <div class="code-block">
+                <code>python clickerfree.py</code>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>ClickerFree V0.4 | Copyright © 2025 ClickerFree Project.</p>
+        <p>遵循 MIT 开源许可协议。</p>
+    </footer>
+
+</body>
+</html>
